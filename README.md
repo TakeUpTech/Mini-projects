@@ -9,6 +9,7 @@ The 'WebImagesDownloader' project allows you to download all the images of a web
 ### Post processing:
 - Checks for corrupted images from all images downloaded,
 - Converts downloaded images into PDF file.
+
 The software tries to automate as much as possible the downloading of images. When the images are on different web pages, it can :
 - Use a pattern (given by the user) that repeat in the url links of those images,
 - Download images from links of web pages found from a main web page.
