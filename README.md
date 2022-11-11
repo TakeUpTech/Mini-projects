@@ -6,6 +6,9 @@
 Message for Myself is a diary in the form of a messaging application. You can send messages and choose the mood of this message. Once sent, your messages are saved. 
 Each time you open the application again the conversation field is reset. Nevertheless, if one day you want to remember events or feelings from your past, you can ask (by pressing a button) to receive a old message from yourself by choosing again the mood of the message.
 
+<p align="center">
+  <img width="720" alt="Message_for_Myself" src="https://user-images.githubusercontent.com/73184884/201381122-d8cf7e78-d7c6-4f8c-8bd5-a70d4cfd7510.png">
+</p>
 
 ## 11/2022 - Contact Manager:
 > Need: Helping someone with an assignment.
