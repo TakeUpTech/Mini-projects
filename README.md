@@ -1,6 +1,20 @@
-# Python projects
+# Mini projects
 
-## WebImagesDownloader:
+## 11/2022 - Message for Myself
+> Challenge: Development of a small application without using internet (tutorials, video...).
+
+Message for Myself is a diary in the form of a messaging application. You can send messages and choose the mood of this message. Once sent, your messages are saved. 
+Each time you open the application again the conversation field is reset. Nevertheless, if one day you want to remember events or feelings from your past, you can ask (by pressing a button) to receive a old message from yourself by choosing again the mood of the message.
+
+
+## 11/2022 - Contact Manager:
+> Need: Helping someone with an assignment.
+
+The script allows to deal with list, file writing and reading and also function and parameter creation: it's like a recap course.
+
+The first function have for objective to search a contact in a .csv file by last name or first name. Then, it displays contact information such as first name, last name and telephone number (but other information can be added thanks to dynamic list). If it doesn't find the contact (doesn't exist), so it displays a warning message. A second function allows the user to add a new contact in the .csv file.
+
+## 07/2022 - Web Images Downloader:
 > Need: How can I read manga offline instead of using scans from a web site?
 
 The 'WebImagesDownloader' project allows you to download all the images of a website with distinct characteristics.
@@ -17,13 +31,6 @@ The software tries to automate as much as possible the downloading of images. Wh
 - Download images from links of web pages found from a main web page.
 
 However, as each web site is coded differently, it is very difficult to find a universal pattern, that's why the program works according to very specific patterns. The user will have to add a new function dealing with a new pattern if it comes from a web site whose pattern has not been processed.
-
-## ContactManager:
-> Need: Helping someone with an assignment.
-
-The script allows to deal with list, file writing and reading and also function and parameter creation: it's like a recap course.
-
-The first function have for objective to search a contact in a .csv file by last name or first name. Then, it displays contact information such as first name, last name and telephone number (but other information can be added thanks to dynamic list). If it doesn't find the contact (doesn't exist), so it displays a warning message. A second function allows the user to add a new contact in the .csv file.
 
 ## Note:
 All codes are available in this repository and are commented in detail.
