@@ -10,8 +10,6 @@ public class Message : MonoBehaviour
     public GameObject messagePrefab;
     [SerializeField] List<string> messageList;
     Color myColor = new Color(252/255f, 187/255f, 109/255f);
-    // Color goodColor = new Color(172/255f, 50/255f, 50/255f);
-    // Color badColor = new Color(18/255f, 142/255f, 88/255f);
     Color defaultColor = new Color(104/255f, 93/255f, 121/255f);
     private string data;
     private string separator = "__;__";
@@ -24,31 +22,32 @@ public class Message : MonoBehaviour
         InstantiateMessage(messagePrefab, "Press the top bar to display some previous messages according to your mood.", defaultColor, Color.white);
 
         data = "";
-        if(PlayerPrefs.HasKey("messageData")){
+        if(PlayerPrefs.HasKey("messageData")){ // Removers saved data if it exist
             data = PlayerPrefs.GetString("messageData");
         }
 
-        string[] messages = data.Split(separator);
-        for (int i = 0; i < messages.Length; i++)
+        string[] messages = data.Split(separator); // Saved data containing is splitted according to a string separator
+        for (int i = 0; i < messages.Length; i++)  // Each element correspond to a message and its associated mood
         {
             if(messages[i] != ""){
-                messageList.Add(messages[i]);
+                messageList.Add(messages[i]); // Message and its mood are added in the message list
             }
         }
     }
 
     public void SendMessage(int mood){
-        if(message.text != ""){
-            messageList.Add(message.text + subSeparator + mood);
-            InstantiateMessage(messagePrefab, message.text, myColor, Color.black);
-            SaveMessage(message.text, mood);
-            message.text = "";
+        if(message.text != ""){ // Empty messages can't be sent
+            messageList.Add(message.text + subSeparator + mood); // Message and its mood are added in the message list
+            InstantiateMessage(messagePrefab, message.text, myColor, Color.black); // The message is creating on the UI of the application
+            SaveMessage(message.text, mood); // The message sent is saved
+            message.text = ""; // Input textfield is cleared
         }/* else{
             Debug.Log("No message to send.");
         } */
     }
 
     public void MemoryMessage(int mood){
+        // Create a list of messages according to the selected mood. Those messages are part of the main message list
         List<string> moodFitList = new List<string>();
         for (int i = 0; i < messageList.Count; i++)
         {
@@ -57,8 +56,8 @@ public class Message : MonoBehaviour
             }
         }
 
-        if(moodFitList.Count > 0){
-            int index = Random.Range(0, moodFitList.Count);
+        if(moodFitList.Count > 0){ // If it exist messages associated to the selected mood
+            int index = Random.Range(0, moodFitList.Count); // We choose a message by its index form the list randomly
 
             /* Color color;
             if(mood == 5)
@@ -68,7 +67,7 @@ public class Message : MonoBehaviour
                 color = goodColor;
             } */
 
-            InstantiateMessage(messagePrefab, moodFitList[index], defaultColor, Color.white);
+            InstantiateMessage(messagePrefab, moodFitList[index], defaultColor, Color.white); // The message is creating on the UI of the application
         }
     }
 
@@ -81,18 +80,19 @@ public class Message : MonoBehaviour
     }
 
     private void SaveMessage(string text, int mood){
-        data += text + subSeparator + mood + separator;
-        PlayerPrefs.SetString("messageData", data);
+        data += text + subSeparator + mood + separator; // Data is saved according to a specific pattern: Text_;_Mood__;__Text_;_Mood...
+        PlayerPrefs.SetString("messageData", data); // String data is save into the register
     }
 
     public void ClearMessageList(){
-        messageList.Clear();
+        messageList.Clear(); // Empties the list of all its elements
     }
 
     private void InstantiateMessage(GameObject prefab, string text, Color backgroundColor, Color textColor){
-        GameObject clone = Instantiate(prefab, this.transform);
-        clone.GetComponentInChildren<TextMeshProUGUI>().text = text;
-        clone.GetComponentInChildren<TextMeshProUGUI>().color = textColor;;
-        clone.GetComponent<Image>().color = backgroundColor;
+        // Create a clone of message UI prefab on the UI application screen, its parent is the possessor of this script
+        GameObject clone = Instantiate(prefab, this.transform); 
+        clone.GetComponentInChildren<TextMeshProUGUI>().text = text; // The text of the message created is set
+        clone.GetComponentInChildren<TextMeshProUGUI>().color = textColor; // The color of the text message created is set
+        clone.GetComponent<Image>().color = backgroundColor; // The color of the message background created is set
     }
 }
