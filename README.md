@@ -37,5 +37,15 @@ The software tries to automate as much as possible the downloading of images. Wh
 
 However, as each web site is coded differently, it is very difficult to find a universal pattern, that's why the program works according to very specific patterns. The user will have to add a new function dealing with a new pattern if it comes from a web site whose pattern has not been processed.
 
+## 01/2022 - Laplacian Edge Detection:
+
+> Challenge: Part of a school project, use the laplacian formula in matlab.
+
+Part of a school project, in a group of 4, we decided to use the Laplacian formula to make an edge detection script. It allowed to read an image, apply some filters on it and the Laplacian on each pixel to return only edges of this image. Then, we also conducted an analysis of the script execution time regarding to image sizes. All details are in the report (in French) in the corresponding folder of this repository. An example of our script result is displayed below:
+
+<p align="center">
+  <img width="720" alt="Laplacian_Landscape" src="https://user-images.githubusercontent.com/73184884/204942985-196e16b1-6045-48c2-8af3-1474354feecc.JPG">
+</p>
+
 ## Note:
 All codes are available in this repository and are commented in detail.
